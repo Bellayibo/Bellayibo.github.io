@@ -131,6 +131,16 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .pill.fill:hover { background: var(--accent); color: #fff; }
 .contact a.v { text-decoration: none; border-bottom: 1px solid var(--flag-line); }
 .contact a.v:hover { color: var(--flag-accent); border-color: var(--flag-accent); }
+.sample { margin-top: 20px; background: var(--card); border: 1px solid var(--line); border-top: 4px solid #d6457a; border-radius: 12px; padding: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 40px; align-items: center; }
+@media (max-width: 800px) { .sample { grid-template-columns: 1fr; padding: 22px; } }
+.sample .copy2 { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.sample .when { font-family: var(--f-mono); font-size: .76rem; color: var(--muted); }
+.sample h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+.sample p { color: var(--muted); }
+.sample .cta { margin-top: 4px; }
+.sample .thumb { display: block; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; min-width: 0; }
+.sample .thumb img { display: block; width: 100%; height: auto; }
+@media (prefers-reduced-motion: no-preference) { .sample .thumb { transition: transform .18s ease, box-shadow .18s ease; } .sample .thumb:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(16, 18, 22, .12); } }
 /* about */
 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 64px; }
 @media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
@@ -232,6 +242,16 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
         <div class="tags"><span class="tag">Research</span><span class="tag">Report</span></div>
       </article>
     </div>
+
+    <article class="sample">
+      <div class="copy2">
+        <span class="when">BA sample</span>
+        <h3>Requirements sample: move-in dates</h3>
+        <p>User stories, business rules, acceptance criteria and test cases, written from the UNest website.</p>
+        <div class="cta"><a class="pill fill" href="Peipei-Liu-BA-Sample.pdf" target="_blank" rel="noopener">View sample (PDF)</a></div>
+      </div>
+      <a class="thumb" href="Peipei-Liu-BA-Sample.pdf" target="_blank" rel="noopener" aria-label="Open the requirements sample PDF"><img src="ba-sample.jpg" alt="First page of the requirements sample: user stories, business rules, acceptance criteria and test cases" width="900" height="560" loading="lazy" decoding="async"></a>
+    </article>
   </section>
 
   <section class="sec" id="about" style="padding-top:72px">
