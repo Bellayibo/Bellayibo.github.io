@@ -9,6 +9,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bellayibo.github.io/">
 <meta property="og:image" content="https://bellayibo.github.io/unest.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2f3f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://bellayibo.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Peipei Liu","jobTitle":"Junior Business Analyst","url":"https://bellayibo.github.io/","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"},"alumniOf":"University of Wollongong","sameAs":["https://www.linkedin.com/in/arabella-liu-88b8a2356","https://github.com/Bellayibo"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231f4fe0%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2719%27 font-family=%27Arial%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EP%3C/text%3E%3C/svg%3E">
 <title>Peipei Liu | Junior Business Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +141,12 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .list span:last-child { color: var(--muted); text-align: right; }
 @media (max-width: 560px) { .list div { flex-direction: column; gap: 2px; } .list span:last-child { text-align: left; } }
 
+.skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 6px; text-decoration: none; font-size: .9rem; }
+.skip:focus { top: 12px; }
+[id] { scroll-margin-top: 76px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.contact a:focus-visible { outline-color: var(--flag-accent); }
+.contact .copy { margin-top: 12px; font-family: var(--f-mono); font-size: .74rem; color: var(--flag-muted); }
 /* contact */
 .contact { margin-top: 96px; background: var(--flag); color: var(--flag-ink); padding-block: 72px 48px; }
 .contact h2 { font-size: clamp(2.2rem, 7vw, 5rem); letter-spacing: -.035em; margin-bottom: 32px; }
@@ -148,14 +159,16 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 </style>
 </head>
 <body>
-<div class="bar">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
   <div class="in">
     <a href="#top"><b>Peipei Liu</b></a>
     <nav aria-label="Sections"><a href="#work">Work</a><a href="#about">About</a><a href="Peipei-Liu-Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="#contact">Contact</a></nav>
     <span class="status"><i></i>Open to Junior BA roles in Sydney</span>
   </div>
-</div>
+</header>
 
+<main id="main">
 <div class="in">
   <header class="hero" id="top">
     <h1>Peipei<br><span>Liu</span></h1>
@@ -181,12 +194,12 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
       </div>
       <div class="win">
         <div class="chrome"><i></i><i></i><i></i><span>unest.com.au</span></div>
-        <img src="unest.jpg" alt="Home page of the UNest website" width="1600" height="743">
+        <img src="unest.jpg" alt="Home page of the UNest website" width="1600" height="743" decoding="async">
       </div>
       <div class="figs">
-        <figure><img src="feat1.jpg" alt="UNest listings with a Hot badge and Lock it in buttons" loading="lazy"><figcaption>Hot badge, move-in date and Lock it in button</figcaption></figure>
-        <figure><img src="feat2.jpg" alt="UNest property page with weekly rent, move-in date and first-come, first-served notice" loading="lazy"><figcaption>Move-in date and first-come, first-served notice</figcaption></figure>
-        <figure><img src="feat3.jpg" alt="UNest property features list" loading="lazy"><figcaption>Property features</figcaption></figure>
+        <figure><img src="feat1.jpg" width="1100" height="567" decoding="async" alt="UNest listings with a Hot badge and Lock it in buttons" loading="lazy"><figcaption>Hot badge, move-in date and Lock it in button</figcaption></figure>
+        <figure><img src="feat2.jpg" width="1100" height="567" decoding="async" alt="UNest property page with weekly rent, move-in date and first-come, first-served notice" loading="lazy"><figcaption>Move-in date and first-come, first-served notice</figcaption></figure>
+        <figure><img src="feat3.jpg" width="1100" height="567" decoding="async" alt="UNest property features list" loading="lazy"><figcaption>Property features</figcaption></figure>
       </div>
     </article>
 
@@ -229,13 +242,13 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
         <div><span>Analysis</span><span>Requirements, design documents, acceptance tests</span></div>
         <div><span>Technical</span><span>Next.js, TypeScript, SQL, Playwright, Git</span></div>
         <div><span>Education</span><span>Master 2026 &middot; Graduate Certificate 2024</span></div>
-        <div><span>Next</span><span>User stories and stakeholder workshops</span></div>
       </div>
     </div>
   </section>
 </div>
+</main>
 
-<section class="contact" id="contact">
+<footer class="contact" id="contact">
   <div class="in">
     <h2>Get in <span>touch</span></h2>
     <div class="links">
@@ -245,7 +258,8 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
       <div><span class="k">Resume</span><a class="v" href="Peipei-Liu-Resume.pdf" target="_blank" rel="noopener">Peipei-Liu-Resume.pdf</a></div>
     </div>
     <p class="note">The code for these projects is private because it belongs to the company. I am happy to explain any project in an interview.</p>
+    <p class="copy">&copy; 2026 Peipei Liu &middot; Sydney, NSW</p>
   </div>
-</section>
+</footer>
 </body>
 </html>
