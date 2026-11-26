@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Peipei Liu, Junior Business Analyst in Sydney.">
+<meta property="og:title" content="Peipei Liu | Junior Business Analyst">
+<meta property="og:description" content="Requirements, design documents and tested software. Sydney, NSW.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bellayibo.github.io/">
+<meta property="og:image" content="https://bellayibo.github.io/unest.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231f4fe0%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2719%27 font-family=%27Arial%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EP%3C/text%3E%3C/svg%3E">
+<title>Peipei Liu | Junior Business Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Concept: a calm page with one loud moment.
+   Big name and one blue accent up top, the live UNest site in a browser frame on a dark navy block,
+   then four quiet project cards and a dark contact band. Very little copy. */
+:root {
+  --bg: #f2f3f5;
+  --card: #ffffff;
+  --ink: #101216;
+  --muted: #5d6470;
+  --line: #d9dce2;
+  --accent: #1f4fe0;
+  --accent-soft: #e6ecfd;
+  --flag: #0e1633;
+  --flag-ink: #eef1fb;
+  --flag-muted: #a4b0d6;
+  --flag-line: #26325c;
+  --flag-accent: #8aa4ff;
+  --f-sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b0d12; --card: #14171d; --ink: #eef0f3; --muted: #97a0ad; --line: #272c35;
+    --accent: #86a0ff; --accent-soft: #1b2440;
+    --flag: #131b38; --flag-line: #2b3869; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b0d12; --card: #14171d; --ink: #eef0f3; --muted: #97a0ad; --line: #272c35;
+  --accent: #86a0ff; --accent-soft: #1b2440;
+  --flag: #131b38; --flag-line: #2b3869; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 17px; line-height: 1.55; }
+h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.in { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* sticky bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; }
+.bar .in { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 16px; font-size: .95rem; }
+.bar a { text-decoration: none; }
+.bar nav { display: flex; gap: 24px; }
+.bar nav a { color: var(--muted); } .bar nav a:hover { color: var(--accent); }
+.status { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .88rem; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: #1f9d63; display: block; }
+
+/* hero */
+.hero { position: relative; padding-block: 56px 80px; }
+.hero::before { content: ""; position: absolute; right: -60px; top: -70px; width: 380px; height: 380px; border-radius: 50%; border: 1.5px solid var(--accent); opacity: .22; pointer-events: none; }
+.hero::after { content: ""; position: absolute; right: 56px; top: 40px; width: 110px; height: 110px; border-radius: 50%; background: var(--accent); opacity: .12; pointer-events: none; }
+@media (max-width: 800px) { .hero::before, .hero::after { display: none; } .hero { padding-block: 32px 48px; } }
+.hero h1 { position: relative; font-size: clamp(3.6rem, 13vw, 10.5rem); letter-spacing: -.045em; line-height: .9; }
+.hero h1 span { color: var(--accent); }
+.hero-row { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px 64px; margin-top: 40px; align-items: end; }
+@media (max-width: 800px) { .hero-row { grid-template-columns: 1fr; } }
+.role { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 500; letter-spacing: -.01em; line-height: 1.25; max-width: 22ch; }
+.role b { color: var(--accent); font-weight: 600; }
+.intro { color: var(--muted); max-width: 40ch; }
+
+/* section heads */
+.sec { padding-block: 24px 0; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--ink); margin-bottom: 28px; }
+.sec-head h2 { font-size: 1.1rem; letter-spacing: 0; font-weight: 600; }
+.sec-head span { font-family: var(--f-mono); font-size: .76rem; color: var(--muted); }
+
+/* flagship: UNest */
+.flag { background: var(--flag); color: var(--flag-ink); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); gap: 32px 48px; align-items: center; margin-bottom: 24px; }
+@media (max-width: 900px) { .flag { grid-template-columns: 1fr; padding: 24px; } }
+.flag .when { font-family: var(--f-mono); font-size: .76rem; color: var(--flag-muted); display: flex; align-items: center; gap: 8px; }
+.flag .when i { width: 8px; height: 8px; border-radius: 50%; background: #3ddc97; display: block; }
+.flag h3 { font-size: clamp(2rem, 4vw, 3rem); margin: 14px 0; }
+.flag p { color: var(--flag-muted); max-width: 44ch; }
+.btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 12px 20px; border-radius: 99px; background: var(--flag-ink); color: var(--flag); font-family: var(--f-mono); font-size: .84rem; font-weight: 500; text-decoration: none; }
+.btn:hover { background: var(--flag-accent); }
+.flag .tags .tag { background: transparent; border: 1px solid var(--flag-line); color: var(--flag-muted); }
+.win { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 24px 60px rgba(0, 0, 0, .35); min-width: 0; }
+.win .chrome { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #e9ebef; }
+.win .chrome i { width: 10px; height: 10px; border-radius: 50%; background: #c3c7cf; display: block; }
+.win .chrome span { margin-left: 10px; flex: 1; background: #fff; border-radius: 6px; padding: 3px 12px; font-family: var(--f-mono); font-size: .72rem; color: #5d6470; }
+.win img { display: block; width: 100%; height: auto; }
+.figs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding-top: 16px; border-top: 1px solid var(--flag-line); }
+@media (max-width: 800px) { .figs { grid-template-columns: 1fr; } }
+.figs figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.figs img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--flag-line); }
+.figs figcaption { font-size: .84rem; color: var(--flag-muted); }
+
+/* cards */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; border-top: 4px solid var(--c, var(--accent)); }
+.card:nth-child(1) { --c: #1f4fe0; } .card:nth-child(2) { --c: #1f9d63; } .card:nth-child(3) { --c: #d9822b; } .card:nth-child(4) { --c: #8a5cf6; }
+@media (max-width: 800px) { .card { padding: 22px; } }
+.card .when { font-family: var(--f-mono); font-size: .76rem; color: var(--muted); }
+.card h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+.card p { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .card { transition: transform .18s ease, box-shadow .18s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(16, 18, 22, .1); }
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+.tag { font-family: var(--f-mono); font-size: .72rem; padding: 3px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.pill { display: inline-flex; align-items: center; padding: 11px 20px; border: 1.5px solid var(--ink); border-radius: 99px; font-family: var(--f-mono); font-size: .82rem; font-weight: 500; text-decoration: none; }
+.pill.fill { background: var(--ink); color: var(--bg); }
+.pill:hover { border-color: var(--accent); }
+.pill.fill:hover { background: var(--accent); color: #fff; }
+.contact a.v { text-decoration: none; border-bottom: 1px solid var(--flag-line); }
+.contact a.v:hover { color: var(--flag-accent); border-color: var(--flag-accent); }
+/* about */
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 64px; }
+@media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
+.lead { font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 500; letter-spacing: -.01em; line-height: 1.3; max-width: 26ch; }
+.list { display: grid; }
+.list div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.list span:first-child { font-weight: 600; }
+.list span:last-child { color: var(--muted); text-align: right; }
+@media (max-width: 560px) { .list div { flex-direction: column; gap: 2px; } .list span:last-child { text-align: left; } }
+
+/* contact */
+.contact { margin-top: 96px; background: var(--flag); color: var(--flag-ink); padding-block: 72px 48px; }
+.contact h2 { font-size: clamp(2.2rem, 7vw, 5rem); letter-spacing: -.035em; margin-bottom: 32px; }
+.contact h2 span { color: var(--flag-accent); }
+.links { display: grid; gap: 8px; }
+.links div { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; }
+.links .k { font-family: var(--f-mono); font-size: .76rem; color: var(--flag-muted); min-width: 84px; text-transform: uppercase; letter-spacing: .06em; }
+.links .v { font-size: clamp(1.05rem, 2.2vw, 1.4rem); overflow-wrap: anywhere; }
+.note { margin-top: 36px; font-size: .84rem; color: var(--flag-muted); max-width: 60ch; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="in">
+    <a href="#top"><b>Peipei Liu</b></a>
+    <nav aria-label="Sections"><a href="#work">Work</a><a href="#about">About</a><a href="Peipei-Liu-Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="#contact">Contact</a></nav>
+    <span class="status"><i></i>Open to Junior BA roles in Sydney</span>
+  </div>
+</div>
+
+<div class="in">
+  <header class="hero" id="top">
+    <h1>Peipei<br><span>Liu</span></h1>
+    <div class="hero-row">
+      <p class="role">Junior Business Analyst. I turn business needs into clear <b>requirements</b> and <b>tested</b> software.</p>
+      <div>
+        <p class="intro">I write requirements and design documents, and test the features that developers build, at a property management group in Sydney.</p>
+        <div class="cta"><a class="pill fill" href="Peipei-Liu-Resume.pdf" target="_blank" rel="noopener">View resume (PDF)</a><a class="pill" href="Peipei-Liu-Resume.pdf" download>Download</a></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec" id="work">
+    <div class="sec-head"><h2>Selected work</h2><span>2026</span></div>
+
+    <article class="flag">
+      <div>
+        <span class="when"><i></i>Mar to Aug 2026 &middot; Live</span>
+        <h3>UNest public website</h3>
+        <p>A student housing website for Sydney. A team project: I helped develop and test it. I built the property detail page and added real move-in dates, a Hot area badge, a first-come, first-served notice and property filters.</p>
+        <a class="btn" href="https://unest.com.au" target="_blank" rel="noopener">Visit unest.com.au &nearr;</a>
+        <div class="tags" style="margin-top:22px"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Playwright</span></div>
+      </div>
+      <div class="win">
+        <div class="chrome"><i></i><i></i><i></i><span>unest.com.au</span></div>
+        <img src="unest.jpg" alt="Home page of the UNest website" width="1600" height="743">
+      </div>
+      <div class="figs">
+        <figure><img src="feat1.jpg" alt="UNest listings with a Hot badge and Lock it in buttons" loading="lazy"><figcaption>Hot badge, move-in date and Lock it in button</figcaption></figure>
+        <figure><img src="feat2.jpg" alt="UNest property page with weekly rent, move-in date and first-come, first-served notice" loading="lazy"><figcaption>Move-in date and first-come, first-served notice</figcaption></figure>
+        <figure><img src="feat3.jpg" alt="UNest property features list" loading="lazy"><figcaption>Property features</figcaption></figure>
+      </div>
+    </article>
+
+    <div class="grid">
+      <article class="card">
+        <span class="when">Mar to Aug 2026</span>
+        <h3>Property management ERP</h3>
+        <p>A team project. I added new features, wrote design documents and tested the company's internal system.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">GitHub</span></div>
+      </article>
+
+      <article class="card">
+        <span class="when">Mar 2026</span>
+        <h3>Booking reconciliation tool</h3>
+        <p>A web tool that works out fees and amounts to pay from booking exports, and makes owner statements. It reduces manual errors and organises bills faster.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">GitHub</span></div>
+      </article>
+
+      <article class="card">
+        <span class="when">Oct 2026 &middot; Ongoing</span>
+        <h3>Cleaning scheduling system</h3>
+        <p>A team project. I added regular property inspections on a 21-day cycle, with a log and email reminders for admins. It runs on the company's Mac mini.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">GitHub</span></div>
+      </article>
+
+      <article class="card">
+        <span class="when">Jul 2025 to Jul 2026</span>
+        <h3>Capstone: SimVLA robot model</h3>
+        <p>Team of five at the University of Wollongong. I reviewed papers and wrote the report.</p>
+        <div class="tags"><span class="tag">Research</span><span class="tag">Report</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="about" style="padding-top:72px">
+    <div class="sec-head"><h2>About</h2><span>Sydney, NSW</span></div>
+    <div class="two">
+      <p class="lead">Master of Computer Science, University of Wollongong. Internal software since March 2026.</p>
+      <div class="list">
+        <div><span>Analysis</span><span>Requirements, design documents, acceptance tests</span></div>
+        <div><span>Technical</span><span>Next.js, TypeScript, SQL, Playwright, Git</span></div>
+        <div><span>Education</span><span>Master 2026 &middot; Graduate Certificate 2024</span></div>
+        <div><span>Next</span><span>User stories and stakeholder workshops</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="contact" id="contact">
+  <div class="in">
+    <h2>Get in <span>touch</span></h2>
+    <div class="links">
+      <div><span class="k">Email</span><a class="v" href="mailto:yiboarabella@gmail.com">yiboarabella@gmail.com</a></div>
+      <div><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/arabella-liu-88b8a2356" target="_blank" rel="noopener">linkedin.com/in/arabella-liu-88b8a2356</a></div>
+      <div><span class="k">GitHub</span><a class="v" href="https://github.com/Bellayibo" target="_blank" rel="noopener">github.com/Bellayibo</a></div>
+      <div><span class="k">Resume</span><a class="v" href="Peipei-Liu-Resume.pdf" target="_blank" rel="noopener">Peipei-Liu-Resume.pdf</a></div>
+    </div>
+    <p class="note">The code for these projects is private because it belongs to the company. I am happy to explain any project in an interview.</p>
+  </div>
+</section>
+</body>
+</html>
